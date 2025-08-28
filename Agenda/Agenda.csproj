@@ -8,4 +8,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Datos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Datos\Personas.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
