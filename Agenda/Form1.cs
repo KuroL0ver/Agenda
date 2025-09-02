@@ -11,8 +11,12 @@ namespace Agenda
         {
             try
             {
-                string datos = System.IO.File.ReadAllText(@"Datos\Personas.csv");
-                MessageBox.Show(datos);
+                //Lee solo las líneas del encabezado 
+                //Es un arreglo de strings
+                string[] datos = File.ReadAllLines(@"Datos\Personas.csv");
+                //Muestra la primera línea del archivo (Nombre, Apellido, Email)
+                //Si cambias el [0] por [1] muestra la segunda línea (Que sería el primer contacto)
+                MessageBox.Show(datos[0]);
             }
             catch (Exception ex) 
             {
