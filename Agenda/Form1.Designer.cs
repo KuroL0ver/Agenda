@@ -28,12 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            DgvContactos = new DataGridView();
+            BtnCargarContactos = new Button();
+            ((System.ComponentModel.ISupportInitialize)DgvContactos).BeginInit();
+            SuspendLayout();
+            // 
+            // DgvContactos
+            // 
+            DgvContactos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvContactos.Location = new Point(12, 30);
+            DgvContactos.Name = "DgvContactos";
+            DgvContactos.RowHeadersWidth = 51;
+            DgvContactos.Size = new Size(762, 188);
+            DgvContactos.TabIndex = 0;
+            // 
+            // BtnCargarContactos
+            // 
+            BtnCargarContactos.Location = new Point(26, 246);
+            BtnCargarContactos.Name = "BtnCargarContactos";
+            BtnCargarContactos.Size = new Size(133, 29);
+            BtnCargarContactos.TabIndex = 1;
+            BtnCargarContactos.Text = "Cargar Contactos";
+            BtnCargarContactos.UseVisualStyleBackColor = true;
+            BtnCargarContactos.Click += BtnCargarContactos_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(BtnCargarContactos);
+            Controls.Add(DgvContactos);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)DgvContactos).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView DgvContactos;
+        private Button BtnCargarContactos;
     }
 }
