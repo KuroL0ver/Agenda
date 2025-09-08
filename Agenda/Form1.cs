@@ -14,19 +14,28 @@ namespace Agenda
                 //Lee solo las líneas del encabezado 
                 //Es un arreglo de strings
                 string[] renglones = File.ReadAllLines(@"Datos\Personas.csv");
+                List<Contacto> contactos = new List<Contacto>();
 
-                bool esContacto = false;
+                bool esEncabezado = true;
                 foreach (string renglon in renglones)
                 {
-                    if (esContacto == false)
+                    if (esEncabezado == true)
                     {
+                        esEncabezado = false;
                         continue;
                     }
+                    //El split sirve para acomodar los renglones en columnas
+                    string[] columnas = renglon.Split(',');
+                    Contacto contacto = new Contacto();
+                    contacto.Nombre = columnas[0];
+                    contacto.Apellido = columnas[1];
+                    contacto.Email = columnas[2];
 
-                    esContacto = true;
-                    MessageBox.Show(renglon);
+                    contactos.Add(contacto);
                 }
+                DgvContactos.DataSource = contactos;
             }
+            
             catch (Exception ex)
             {
 
